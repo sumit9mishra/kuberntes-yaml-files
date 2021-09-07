@@ -1,0 +1,35 @@
+to install kubernetes cluster, we use kops.
+
+to manage we use kubectl
+
+#kubectl get nodes -- if i couldn't able to see nodes, then cluster is not up.
+
+#kubectl get pods
+
+#kubectl run nginx1  --image=nginx --port=80 - 
+
+#kubectl get pods -- one container is one pod
+
+#kubectl get deployment
+
+#kubectl run nginx2  --image=nginx --port=80 --replicas=2
+
+#kubectl get pods -o wide --> we can see the ip and node name
+
+#kubectl get pods
+
+#kubectl exec <podname> service nginx status --> executing commands on container from outside.
+
+kubectl describe pods <podname>
+
+##########we can give labels.. like we have tags in aws#############
+
+#kubectl get deployments --all-namespaces
+
+kubectl get pods
+
+i want to add labels 
+
+#kubectl label pod podname env=prod -- add 2 pod names
+
+#kubectl label pod podname env=test -- add 2 pod name

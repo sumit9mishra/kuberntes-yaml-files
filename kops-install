@@ -1,0 +1,25 @@
+create a ssh key pair in admin server (ubuntu)
+ssh-keygen
+
+create a ubuntu server in AWS
+install pip
+install aws cli using pip
+#pip install awscli
+
+get access key and secret key
+
+$ wget https://github.com/kubernetes/kops/releases/download/1.11.0/kops-linux-amd64
+
+$ chmod +x kops-linux-amd64
+$ mv kops-linux-amd64 /usr/local/bin/kops
+
+#kops create cluster --name=domainname --state=s3://bucketname --zones=us-east-1a --node-count=2 --node-size=t2.micro --master-size=t2.micro --dns-zone=dnsdomainname
+
+Kops uses S3 bucket to store the state of the cluster so that it can be kept persistent. Let us create a S3 bucket for kops to use.
+
+kops update cluster domainname --yes --state=s3://bucketname
+
+in AWS it will create secuity groups, auto-scaling, VPC, subnets for master and nodes.
+
+kops is to install kubernetes cluster
+kubectl is to manage it. 
